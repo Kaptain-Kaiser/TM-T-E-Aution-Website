@@ -11502,7 +11502,7 @@ $('#signup-frm').submit(function(e) {
                 location.reload();
             } else {
                 $('#signup-frm').prepend(
-                    '<div class="alert alert-danger">Email already exist.</div>')
+                    '<div class="alert alert-danger">Email đã tồn tại</div>')
                 end_load()
             }
         }

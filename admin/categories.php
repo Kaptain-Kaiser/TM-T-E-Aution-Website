@@ -97,13 +97,13 @@ $('#manage-category').submit(function(e) {
         type: 'POST',
         success: function(resp) {
             if (resp == 1) {
-                alert_toast("Data successfully added", 'success')
+                alert_toast("Thêm thành công", 'success')
                 setTimeout(function() {
                     location.reload()
                 }, 1500)
 
             } else if (resp == 2) {
-                alert_toast("Data successfully updated", 'success')
+                alert_toast("Sửa thành công", 'success')
                 setTimeout(function() {
                     location.reload()
                 }, 1500)
@@ -122,7 +122,7 @@ $('.edit_category').click(function() {
     end_load()
 })
 $('.delete_category').click(function() {
-    _conf("Are you sure to delete this category?", "delete_category", [$(this).attr('data-id')])
+    _conf("Bạn có chắc muốn xóa danh mục này ?", "delete_category", [$(this).attr('data-id')])
 })
 
 function delete_category($id) {
@@ -135,7 +135,7 @@ function delete_category($id) {
         },
         success: function(resp) {
             if (resp == 1) {
-                alert_toast("Data successfully deleted", 'success')
+                alert_toast("Xóa thành công", 'success')
                 setTimeout(function() {
                     location.reload()
                 }, 1500)

@@ -108,7 +108,7 @@ $(document).ready(function() {
 })
 
 $('.view_user').click(function() {
-    uni_modal("<i class'fa fa-card-id'></i> Buyer Details", "view_udet.php?id=" + $(this).attr('data-id'))
+    uni_modal("<i class'fa fa-card-id'></i> Thông tin người mua", "view_udet.php?id=" + $(this).attr('data-id'))
 
 })
 $('#new_book').click(function() {
@@ -133,7 +133,7 @@ function delete_book($id) {
         },
         success: function(resp) {
             if (resp == 1) {
-                alert_toast("Data successfully deleted", 'success')
+                alert_toast("Xóa thành công", 'success')
                 setTimeout(function() {
                     location.reload()
                 }, 1500)

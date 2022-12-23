@@ -73,7 +73,7 @@ $('#manage-records').submit(function(e) {
         success: function(resp) {
             resp = JSON.parse(resp)
             if (resp.status == 1) {
-                alert_toast("Data successfully saved", 'success')
+                alert_toast("Thêm thành công", 'success')
                 setTimeout(function() {
                     location.reload()
                 }, 800)

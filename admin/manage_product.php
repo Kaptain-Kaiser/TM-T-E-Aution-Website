@@ -252,7 +252,7 @@ $('#manage-product').submit(function(e) {
         type: 'POST',
         success: function(resp) {
             if (resp == 1) {
-                alert_toast("Data successfully saved", 'success')
+                alert_toast("Thêm thành công", 'success')
                 setTimeout(function() {
                     location.href = "index.php?page=products"
                 }, 1500)

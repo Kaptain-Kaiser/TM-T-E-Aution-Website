@@ -127,7 +127,7 @@ $('.edit_product').click(function() {
 
 })
 $('.delete_product').click(function() {
-    _conf("Are you sure to delete this product?", "delete_product", [$(this).attr('data-id')])
+    _conf("Bạn có chắc muốn xóa sản phẩm này ?", "delete_product", [$(this).attr('data-id')])
 })
 
 function delete_product($id) {
@@ -140,7 +140,7 @@ function delete_product($id) {
         },
         success: function(resp) {
             if (resp == 1) {
-                alert_toast("Data successfully deleted", 'success')
+                alert_toast("Xóa thành công", 'success')
                 setTimeout(function() {
                     location.reload()
                 }, 1500)
