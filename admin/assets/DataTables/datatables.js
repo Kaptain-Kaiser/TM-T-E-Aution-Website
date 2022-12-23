@@ -11237,7 +11237,7 @@
        *      } );
        *    } );
        */
-      sInfoFiltered: "(filtered from _MAX_ total entries)",
+      sInfoFiltered: "",
 
       /**
        * If can be useful to append extra information to the info string at times,

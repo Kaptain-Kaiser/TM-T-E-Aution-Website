@@ -50,7 +50,7 @@ $('#imagesCarousel img,#banner img').click(function() {
     viewer_modal($(this).attr('src'))
 })
 $('#participate').click(function() {
-    _conf("Are you sure to commit that you will participate to this event?", "participate", [<?php echo $id ?>],
+    _conf("Bạn có chắc chẳn ?", "participate", [<?php echo $id ?>],
         'mid-large')
 })
 var _updateBid = setInterval(function() {
@@ -78,7 +78,7 @@ $('#manage-bid').submit(function(e) {
     var latest = $('#hbid').text()
     latest = latest.replace(/,/g, '')
     if (parseFloat(latest) > $('[name="bid_amount"]').val()) {
-        alert_toast("Bid amount must be greater than the current Highest Bid.", 'danger')
+        alert_toast("Giá phải lớn hơn giá cao nhất.", 'danger')
         end_load()
         return false;
     }
@@ -88,10 +88,10 @@ $('#manage-bid').submit(function(e) {
         data: $(this).serialize(),
         success: function(resp) {
             if (resp == 1) {
-                alert_toast("Bid successfully submited", 'success')
+                alert_toast("Đấu giá thành công", 'success')
                 end_load()
             } else if (resp == 2) {
-                alert_toast("The current highest bid is yours.", 'danger')
+                alert_toast("Giá cao nhất hiện tại là của bạn .", 'danger')
                 end_load()
             }
         }

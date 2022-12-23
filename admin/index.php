@@ -218,7 +218,7 @@ $('.datetimepicker').datetimepicker({
     startDate: '+3d'
 })
 $('.select2').select2({
-    placeholder: "Please select here",
+    placeholder: "Chọn danh mục",
     width: "100%"
 })
 </script>

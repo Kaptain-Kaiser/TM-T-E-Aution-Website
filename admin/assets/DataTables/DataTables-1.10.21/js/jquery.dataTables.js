@@ -11225,7 +11225,7 @@
        *      } );
        *    } );
        */
-      sInfoFiltered: "(filtered from _MAX_ total entries)",
+      sInfoFiltered: "",
 
       /**
        * If can be useful to append extra information to the info string at times,
@@ -11339,7 +11339,7 @@
        *      } );
        *    } );
        */
-      sLengthMenu: "Show _MENU_ entries",
+      sLengthMenu: "Hiện _MENU_ mục",
 
       /**
        * When using Ajax sourced data and during the first draw when DataTables is

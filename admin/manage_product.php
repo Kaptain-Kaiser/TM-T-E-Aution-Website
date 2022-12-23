@@ -217,7 +217,7 @@ img#img_path-field {
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <button class="btn btn-sm btn-block btn-primary col-sm-2"> Save</button>
+                            <button class="btn btn-sm btn-block btn-primary col-sm-2"> Lưu</button>
                         </div>
                     </div>
                 </form>
