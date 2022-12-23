@@ -144,7 +144,7 @@ $('#login-form').submit(function(e) {
                 location.href = 'index.php?page=home';
             } else {
                 $('#login-form').prepend(
-                    '<div class="alert alert-danger">Username or password is incorrect.</div>')
+                    '<div class="alert alert-danger">Username hoặc mật khẩu không đúng.</div>')
                 $('#login-form button[type="button"]').removeAttr('disabled').html('Login');
             }
         }
