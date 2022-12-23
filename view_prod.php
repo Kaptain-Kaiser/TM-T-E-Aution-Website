@@ -11,46 +11,44 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
 }
 ?>
 <style type="text/css">
-#bid-frm {
-    display: none
-}
+	#bid-frm{
+		display: none
+	}
 </style>
 <div class="container-fluid">
-    <img src="admin/assets/uploads/<?php echo $img_fname ?>" class="d-flex w-100" alt="">
-    <p>Tên: <large><b><?php echo $name ?></b></large>
-    </p>
-    <p>Danh mục: <b><?php echo $category ?></b></p>
-    <p>Giá khởi điểm: <b><?php echo number_format($start_bid,2) ?></b></p>
-    <p>Hạn: <b><?php echo date("m d,Y h:i A",strtotime($bid_end_datetime)) ?></b></p>
-    <p>Giá cao nhất: <b id="hbid"><?php echo number_format($start_bid,2) ?></b></p>
-    <p>Mô tả:</p>
-    <p class=""><small><i><?php echo $description ?></i></small></p>
-    <div class="col-md-12">
-        <button class="btn btn-primary btn-block btn-sm" type="button" id="bid">Đấu giá</button>
-    </div>
-    <div id="bid-frm">
-        <div class="col-md-12">
-            <form id="manage-bid">
-                <input type="hidden" name="product_id" value="<?php echo $id ?>">
-                <div class="form-group">
-                    <label for="" class="control-label">Bid Amount</label>
-                    <input type="number" class="form-control text-right" name="bid_amount">
-                </div>
-                <div class="row justify-content-between">
-                    <button class="btn col-sm-5 btn-primary btn-block btn-sm mr-2">Submit</button>
-                    <button class="btn col-sm-5 btn-secondary mt-0 btn-block btn-sm" type="button"
-                        id="cancel_bid">Hủy</button>
-                </div>
-            </form>
-        </div>
-    </div>
+	<img src="admin/assets/uploads/<?php echo $img_fname ?>" class="d-flex w-100" alt="">
+	<p>Tên: <large><b><?php echo $name ?></b></large></p>
+	<p>Danh mục: <b><?php echo $category ?></b></p>
+	<p>Giá khởi điểm: <b><?php echo number_format($start_bid,2) ?></b></p>
+	<p>Thời hạn: <b><?php echo date("m d,Y h:i A",strtotime($bid_end_datetime)) ?></b></p>
+	<p>Tiền cược cao nhất: <b id="hbid"><?php echo number_format($start_bid,2) ?></b></p>
+	<p>Mô tả:</p>
+	<p class=""><small><i><?php echo $description ?></i></small></p>
+	<div class="col-md-12">
+		<button class="btn btn-primary btn-block btn-sm" type="button" id="bid">Bid</button>
+	</div>
+	<div id="bid-frm">
+		<div class="col-md-12">
+			<form id="manage-bid">
+				<input type="hidden" name="product_id" value="<?php echo $id ?>">
+				<div class="form-group">
+					<label for="" class="control-label">Tiền Cược</label>
+					<input type="number" class="form-control text-right" name="bid_amount" >
+				</div>
+				<div class="row justify-content-between">
+					<button class="btn col-sm-5 btn-primary btn-block btn-sm mr-2">Xác nhận</button>
+					<button class="btn col-sm-5 btn-secondary mt-0 btn-block btn-sm" type="button" id="cancel_bid">Huỷ</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
 <script>
 $('#imagesCarousel img,#banner img').click(function() {
     viewer_modal($(this).attr('src'))
 })
 $('#participate').click(function() {
-    _conf("Bạn có chắc chẳn ?", "participate", [<?php echo $id ?>],
+    _conf("Are you sure to commit that you will participate to this event?", "participate", [<?php echo $id ?>],
         'mid-large')
 })
 var _updateBid = setInterval(function() {
@@ -78,7 +76,7 @@ $('#manage-bid').submit(function(e) {
     var latest = $('#hbid').text()
     latest = latest.replace(/,/g, '')
     if (parseFloat(latest) > $('[name="bid_amount"]').val()) {
-        alert_toast("Giá phải lớn hơn giá cao nhất.", 'danger')
+        alert_toast("Bid amount must be greater than the current Highest Bid.", 'danger')
         end_load()
         return false;
     }
@@ -88,10 +86,10 @@ $('#manage-bid').submit(function(e) {
         data: $(this).serialize(),
         success: function(resp) {
             if (resp == 1) {
-                alert_toast("Đấu giá thành công", 'success')
+                alert_toast("Bid successfully submited", 'success')
                 end_load()
             } else if (resp == 2) {
-                alert_toast("Giá cao nhất hiện tại là của bạn .", 'danger')
+                alert_toast("The current highest bid is yours.", 'danger')
                 end_load()
             }
         }
