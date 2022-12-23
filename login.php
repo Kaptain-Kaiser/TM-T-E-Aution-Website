@@ -45,7 +45,7 @@ $('#login-frm').submit(function(e) {
                     '<?php echo isset($_GET['redirect']) ? $_GET['redirect'] : 'index.php?page=home' ?>';
             } else {
                 $('#login-frm').prepend(
-                    '<div class="alert alert-danger">Email hoặc mật khẩu không đúng.</div>')
+                    '<div class="alert alert-danger">Email or mật khẩu không đúng.</div>')
                 end_load()
             }
         }
